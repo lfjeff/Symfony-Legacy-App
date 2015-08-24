@@ -94,7 +94,7 @@ To verify the routes, run the following command:
 
     php app/console debug:route
 
-This may still show the `showdata` route, which is part of the demo.  This can be changed by editing the `src/AppBundle/Controller/DefaultController.php` file.  You'll probably be doing this anyway as you migrate your legacy code to Symfony.
+The `showdata` route may still be visible, since it is part of the demo.  This can be changed by editing the `src/AppBundle/Controller/DefaultController.php` file.  You'll probably be doing this anyway as you migrate your legacy code to Symfony.
 
 ## Accessing Symfony Services and Parameters From Legacy Code ##
 
