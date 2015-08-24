@@ -1,5 +1,7 @@
 <?php
-
+//
+// NOTE: For security reasons, this file should be REMOVED on production servers.
+//
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Debug\Debug;
 
