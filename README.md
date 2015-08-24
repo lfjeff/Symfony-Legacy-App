@@ -67,6 +67,8 @@ Next, you'll need to copy all your static files (those without a `.php` suffix) 
 
 Before blindly running the script, I suggested you review the `rsync_static_to_web.sh` script and tweak as necessary.  You may want to include or exclude certain files specific to your application.
 
+Please note that except for `app.php` and `app_dev.php` (on your development system), there should be NO `.php` files in the `web` directory.
+
 Everything tweaked? OK, let's copy the files:
 
     php bin/rsync_static_to_web
