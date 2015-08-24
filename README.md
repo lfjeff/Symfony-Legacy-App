@@ -35,7 +35,7 @@ Let's get started...
 
 Clone this repository into your project directory:
 
-    git clone https://github.com/xyx/SymfonyLegacyApp.git my_project
+    git clone https://github.com/lfjeff/Symfony-Legacy-App.git my_project
 
 Install dependencies:
 
