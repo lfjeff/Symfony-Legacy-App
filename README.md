@@ -6,7 +6,7 @@ At first, getting a large legacy application converted to Symfony can seem like 
 
 You know that Symfony offers many advantages, but how do you keep your current code running while getting to your ultimate goal?
 
-For several months, I had been attempting to do convert old code by using Silex to gradually refactor a legacy application into a more modern architecture.  This was meant as a "stepping-stone" to full-blown Symfony.
+For several months, I had been attempting to convert old code by using Silex to gradually refactor a legacy application into a more modern architecture.  This was meant as a "stepping-stone" to full-blown Symfony.
 
 Then I discovered an [article](http://www.enotogorsk.ru/en/2014/07/21/introduction/ "Symfony and Legacy Code") by Alexander Ulyanov and realized I could skip the Silex step and go straight to Symfony.
 
@@ -115,7 +115,7 @@ This package assumes your legacy code is using URLs that all end with a `.php` s
 If your legacy code requires "register globals" to work, edit the  `parameters` section of the `config.yml` file and set `legacy_register_globals` to `true`.
 
 
-If you are using `app_dev.php` for debugging and notice problems with how the page is displayed, check the `adjust_relative_links_for_dev_mode()` function in `LegacyController.php`.  This is the function that rewrites links on-the-fly to adjust for the offset caused by the "virtual" `app_dev.php/` directory.
+If you are using `app_dev.php` for debugging legacy code and notice problems with how the page is displayed, check the `adjust_relative_links_for_dev_mode()` function in `LegacyController.php`.  This is the function that rewrites links on-the-fly to adjust for the offset caused by the "virtual" `app_dev.php/` directory.
 
 If your legacy code uses the `ob_start()` routine to capture output, then this package may not work correctly.
 
