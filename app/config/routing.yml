@@ -1,0 +1,7 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:   annotation
+
+legacy_app:
+    resource: "@LegacyInteropBundle/Controller/"
+    type:    annotation

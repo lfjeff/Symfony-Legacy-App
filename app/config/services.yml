@@ -1,0 +1,29 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    legacy.controller:
+        class: LegacyInteropBundle\Controller\LegacyController
+        arguments: ["@legacy.bridge"]
+        calls:
+            - [ setContainer, ["@service_container"]]
+
+    legacy.bridge:
+        class: LegacyInteropBundle\LegacyBridge
+        arguments: ["@session", "%legacy_app_path%", "%legacy_globals_path%"]
+
+    # override session service
+    session:
+        class: "%session.class%"
+        arguments: ["@session.storage", "@session.attribute_bag", "@session.flash_bag"]
+        configurator: [ "@session.legacy_configurator", initLegacySession]
+
+    # define session configurator service
+    session.legacy_configurator:
+        class : LegacyInteropBundle\Session\SessionConfigurator
+
